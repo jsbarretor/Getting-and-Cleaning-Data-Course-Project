@@ -1,0 +1,32 @@
+El script "run_analysis" permite preparar la infromación a través de los siguientes pasos:
+
+▲ Descargar el conjunto de datos raw: Conjunto de datos descargado en foramto .zip y extraido
+
+▲ Leer los archivos y asignar cada archivo a una variable
+   → features: Archivo "features.txt". Contiene 561 filas y 2 columnas. Son los nombres de las variables
+   → activity.labels: Archivo "activity_labels.txt". Contiene 6 filas y 2 columnas. Etiquetas correspondientes a las etiquetas de los diferentes tipos de actividades
+   → x.test: Archivo "X_test.txt". Contiene 2947 filas y 561 columnas. Conjunto de datos de prueba
+   → y.test: Archivo "y_test.txt". Contiene 2947  filas y 1 columna. Conjunto de datos de prueba
+   → subject.test: Archivo "subject_test.txt". Contiene 2947 filas y 1 columna. Conjunto de datos de sujetos para prueba
+   → x.train: Archivo "X_train.txt". Contiene 7352 filas y 561 columnas. Conjunto de datos de entrenamiento
+   → y.train: Archivo "y_train.txt". Contiene 7352 filas y 1 columna. Conjunto de datos de entrenamiento
+   → subject_train: Archivo "subject_train.txt". Contiene 7352 filas y 1 columna. Conjunto de datos de sujetos para entrenamiento
+
+▲ Unir todos los conjuntos de datos (training and validation): Unir x.test, y.test, x.train, y.train, subject.test y subject_train
+
+▲ Extraer unicamente las colunnas que tienen informacion de promedio y desviación estandar
+
+▲ Reemplazar el código de actividades (npumerico) por una etiqueta de texto
+
+▲ Corregir las etiquetas de las variables para ser mejor entendible el conjunto de datos
+   → Reemplazar "code" por "activities"
+   → Reemplazar "Acc" por "Accelerometer"
+   → Reemplazar "Gyro " por "Gyroscope"
+   → Reemplazar "BodyBody " por "Body"
+   → Reemplazar caracter inicial que sea "f" por "Frequency"
+   → Reemplazar caracter inicial que sea "t" por "Time"
+
+▲ A partir del conjunto de datos del paso anterior crear un segundo subconjunto calculando el valor promedio
+  de cada variable, para cada sujeto y cada actividades
+
+▲ Exportar el conjunto final de datos (que tiene 180 filas y 88 columnas) en formato ".txt"
